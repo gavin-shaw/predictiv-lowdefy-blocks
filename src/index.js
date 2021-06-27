@@ -19,6 +19,7 @@ import ContextBlock from './blocks/ContextBlock/ContextBlock';
 import DisplayBlock from './blocks/DisplayBlock/DisplayBlock';
 import InputBlock from './blocks/InputBlock/InputBlock';
 import ListBlock from './blocks/ListBlock/ListBlock';
+import SeafileUploadButton from './blocks/SeafileUploadButton/SeafileUploadButton';
 
-export { ContainerBlock, ContextBlock, DisplayBlock, InputBlock, ListBlock };
-export default { ContainerBlock, ContextBlock, DisplayBlock, InputBlock, ListBlock };
+export { ContainerBlock, ContextBlock, DisplayBlock, InputBlock, ListBlock, SeafileUploadButton };
+export default { ContainerBlock, ContextBlock, DisplayBlock, InputBlock, ListBlock, SeafileUploadButton };

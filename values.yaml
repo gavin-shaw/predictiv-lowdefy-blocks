@@ -1,0 +1,8 @@
+repository: https://github.com/gavin-shaw/predictiv-lowdefy-blocks
+applicationPort: 3002
+ingress:
+  enabled: "true"
+  hostname: blocks.k8s.syntegra.solutions
+  tls: "true"
+mongodb:
+  enabled: "false"

@@ -1,0 +1,62 @@
+{
+    "valueType": "object",
+    "category": "input",
+    "loading": {
+        "type": "SkeletonButton"
+    },
+    "schema": {
+        "properties": {
+            "type": "object",
+            "required": ["authRequestId"],
+            "properties": {
+                "accept": {
+                    "type": "string",
+                    "description": "File types accepted by the input. See html file type input accept property at https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept."
+                },
+                "button": {
+                    "type": "object",
+                    "description": "Button block properties.",
+                    "default": {
+                        "icon": "UploadOutlined",
+                        "title": "Upload",
+                        "type": "default"
+                    },
+                    "docs": {
+                        "displayType": "button"
+                    }
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "description": "Disable the file input."
+                },
+                "authRequestId": {
+                    "type": "string",
+                    "description": "Id of a request of type AxiosHTTP that authenticates with Seafile and returns an auth token"
+                },
+                "showUploadList": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Whether to show default upload list."
+                },
+                "singleFile": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Only allow a single file to be uploaded. Only one file can be selected in the prompt and the upload button is disabled after a file is uploaded."
+                }
+            }
+        },
+        "events": {
+            "type": "object",
+            "properties": {
+                "onChange": {
+                    "type": "array",
+                    "description": "Triggered when the upload state is changing."
+                },
+                "onClick": {
+                    "type": "array",
+                    "description": "Triggered when the upload button is clicked."
+                }
+            }
+        }
+    }
+}

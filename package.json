@@ -1,32 +1,31 @@
 {
-  "name": "@lowdefy/blocks-template",
-  "version": "3.10.1",
-  "license": "MIT",
-  "description": "A template example for Lowdefy blocks.",
-  "homepage": "https://lowdefy.com",
-  "keywords": [
-    "lowdefy",
-    "lowdefy blocks"
-  ],
-  "bugs": {
-    "url": "https://github.com/lowdefy/lowdefy/issues"
-  },
-  "contributors": [],
+  "name": "predictiv-lowdefy-blocks",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lowdefy/blocks-template.git"
+    "url": "https://github.com/gavin-shaw/predictiv-lowdefy-blocks"
   },
   "browser": "dist/remoteEntry.js",
   "files": [
     "dist/*"
   ],
   "scripts": {
+    "docker:build": "docker build -t predictiv-lowdefy-blocks .",
+    "docker:run": "docker run -it -d --name predictiv-lowdefy-blocks -p 3002:3002 predictiv-lowdefy-blocks",
     "build": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.prod.js",
     "prepare": "yarn build",
-    "start": "webpack serve --config webpack.dev.js"
+    "start": "webpack serve --config webpack.prod.js",
+    "start:dev": "webpack serve --config webpack.dev.js"
   },
   "dependencies": {
+    "@ag-grid-community/all-modules": "25.1.0",
+    "@ag-grid-community/core": "25.1.0",
+    "@ag-grid-community/react": "25.1.0",
+    "@ant-design/icons": "4.5.0",
     "@lowdefy/block-tools": "3.10.1",
+    "@lowdefy/blocks-antd": "^3.12.3",
+    "antd": "4.4.2",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
@@ -35,16 +34,35 @@
     "@babel/core": "7.12.16",
     "@babel/preset-env": "7.12.16",
     "@babel/preset-react": "7.12.13",
+    "@lowdefy/helpers": "^3.12.3",
+    "babel-jest": "26.6.3",
     "babel-loader": "8.2.2",
     "buffer": "6.0.3",
     "clean-webpack-plugin": "3.0.0",
     "copy-webpack-plugin": "7.0.0",
     "css-loader": "5.0.2",
+    "eslint": "7.18.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "html-webpack-plugin": "5.1.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "26.6.3",
+    "js-yaml": "4.0.0",
+    "less": "3.13.0",
+    "less-loader": "9.0.0",
     "prettier": "2.2.1",
+    "react-markdown": "5.0.3",
+    "react-syntax-highlighter": "15.4.3",
     "style-loader": "2.0.0",
     "webpack": "5.22.0",
     "webpack-cli": "4.5.0",
     "webpack-dev-server": "3.11.2",
-    "webpack-merge": "5.7.3"
+    "webpack-merge": "5.7.3",
+    "yaml-jest": "1.0.5",
+    "yaml-loader": "0.6.0"
   }
 }

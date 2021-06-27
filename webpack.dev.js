@@ -26,7 +26,7 @@ const addRemoteEntryUrl = (content, absoluteFrom) => {
     module: path.basename(absoluteFrom, '.json'),
     scope,
     version: packageJson.version,
-    remoteEntryUrl: `http://localhost:${port}/remoteEntry.js`,
+    remoteEntryUrl: `http://0.0.0.0:${port}/remoteEntry.js`,
   };
   return JSON.stringify(meta);
 };
@@ -36,6 +36,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval-source-map',
   devServer: {
+    host: '0.0.0.0',
     contentBase: path.join(__dirname, 'dist'),
     port,
     historyApiFallback: true,

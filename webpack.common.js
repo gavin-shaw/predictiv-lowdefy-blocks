@@ -60,6 +60,32 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
+          },
+          {
+            loader: 'less-loader', // compiles Less to CSS
+            options: {
+              lessOptions: {
+                modifyVars: {
+                  '@primary-color': '#697a8c',
+                  '@link-color': '#1890ff',
+                  '@layout-header-background': '#30383f',
+                  '@layout-sider-background': '#30383f',
+                  '@menu-dark-submenu-bg': '#21262b',
+                },
+                javascriptEnabled: true,
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
