@@ -24,7 +24,7 @@ const addRemoteEntryUrl = (content, absoluteFrom) => {
       version: packageJson.version,
       // unpkg can result in a unreliable module federation experience.
       // Deploy you block to your preferred static file host and update the remoteEntryUrl.
-      remoteEntryUrl: `https://blocks.k8s.syntegra.solutions/dist/remoteEntry.js`,
+      remoteEntryUrl: `https://blocks.k8s.syntegra.solutions/remoteEntry.js`,
     };
   }
   return JSON.stringify(meta);

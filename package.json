@@ -10,13 +10,11 @@
     "dist/*"
   ],
   "scripts": {
-    "docker:build": "docker build -t predictiv-lowdefy-blocks .",
-    "docker:run": "docker run -it -d --name predictiv-lowdefy-blocks -p 3002:3002 predictiv-lowdefy-blocks",
-    "build": "webpack --config webpack.prod.js",
-    "build:dev": "webpack --config webpack.prod.js",
-    "prepare": "yarn build",
-    "start": "webpack serve --config webpack.prod.js",
-    "start:dev": "webpack serve --config webpack.dev.js"
+    "start": "webpack build --config webpack.prod.js & webpack serve --port 3000 --config webpack.prod.js",
+    "start:dev": "webpack --config webpack.dev.js & webpack serve --port 3002 --config webpack.dev.js",
+    "helm:install": "helm install $npm_package_name -f values.yaml bitnami/node",
+    "helm:upgrade": "helm upgrade $npm_package_name -f values.yaml bitnami/node",
+    "helm:uninstall": "helm uninstall $npm_package_name"
   },
   "dependencies": {
     "@ag-grid-community/all-modules": "25.1.0",
