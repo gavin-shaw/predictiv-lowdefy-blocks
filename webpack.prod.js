@@ -33,6 +33,9 @@ const addRemoteEntryUrl = (content, absoluteFrom) => {
 module.exports = merge(common, {
   entry: './src/index',
   mode: 'production',
+  devServer: {
+    host: '0.0.0.0',
+  },
   plugins: [
     new CopyPlugin({
       patterns: [

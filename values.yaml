@@ -9,6 +9,8 @@ ingress:
 mongodb:
   enabled: false
 livenessProbe:
+  enabled: false
   path: '/remoteEntry.js'
 readinessProbe:
+  enabled: false
   path: '/remoteEntry.js'
