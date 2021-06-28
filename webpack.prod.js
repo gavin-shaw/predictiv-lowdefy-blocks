@@ -35,6 +35,7 @@ module.exports = merge(common, {
   mode: 'production',
   devServer: {
     host: '0.0.0.0',
+    public: 'blocks.k8s.syntegra.solutions'
   },
   plugins: [
     new CopyPlugin({
