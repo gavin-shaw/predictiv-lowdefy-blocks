@@ -41,12 +41,13 @@ const getCustomRequest =
         throw new Error('S3 post policy request error.');
       }
 
-      const { url, fields } = s3PostPolicyResponse.responses[0].response[0];
-      const { bucket, key } = fields;
+      const { authToken } = authResponse.responses[0].response[0];
+
+      console.log({ authToken });
 
       setSeafileParameters((prevState) => {
         const ret = { ...prevState };
-        ret[uid] = { bucket, key };
+        ret[uid] = { authToken };
         return ret;
       });
 
@@ -86,16 +87,16 @@ const SeafileUploadButtonBlock = ({ blockId, events, methods, properties, value 
   useEffect(() => {
     methods.setValue({ file: null, fileList: [] });
     methods.registerEvent({
-        name: '__getAuthToken',
-        actions: [
-          {
-            id: `${blockId}__getAuthToken`,
-            type: 'Request',
-            params: [properties.authRequestId],
-          },
-        ],
-      });
-    }, []);
+      name: '__getAuthToken',
+      actions: [
+        {
+          id: `${blockId}__getAuthToken`,
+          type: 'Request',
+          params: [properties.authRequestId],
+        },
+      ],
+    });
+  }, []);
 
   const disabled = getDisabled({ properties, value });
   return (
@@ -122,7 +123,7 @@ const SeafileUploadButtonBlock = ({ blockId, events, methods, properties, value 
           ...properties.button,
         }}
         methods={methods}
-      />
+      />{' '}
     </Upload>
   );
 };
